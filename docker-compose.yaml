@@ -1,0 +1,12 @@
+version: "3"
+
+service:
+  tor-hs:
+    image: craumix/mini-tor-hs
+    container_name: tor-hs
+    restart: unless-stopped
+    environment: 
+      - HS_PORT=80
+      - HS_TARGET=127.0.0.1:8080
+    volumes:
+      - ./hidden_service:/tor/hidden_service

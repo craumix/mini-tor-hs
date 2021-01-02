@@ -8,4 +8,4 @@ WORKDIR /tor
 
 COPY run.sh ./
 
-ENTRYPOINT [ "./run.sh" ]
+ENTRYPOINT ["/bin/sh", "run.sh" ]

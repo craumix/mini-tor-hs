@@ -6,6 +6,8 @@ RUN apk --update --allow-untrusted --no-cache \
 
 WORKDIR /tor
 
-COPY run.sh ./
+COPY docker-entrypoint.sh ./
 
-ENTRYPOINT ["/bin/sh", "run.sh" ]
+RUN chmod +x ./docker-entrypoint.sh
+
+ENTRYPOINT ["./docker-entrypoint.sh" ]
